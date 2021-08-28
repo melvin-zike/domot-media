@@ -1,0 +1,109 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex; 
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.loginWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+ .loginLeft {
+  flex: 9;
+  width: 20%;
+  background-image: url("../../assests/doors-1587329_1920.jpg");
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.loginRight {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  
+}
+ 
+.loginLogo {
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.loginDesc {
+  font-size: 1px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.loginBox{
+  height: 100vh;
+  margin-top: 150px;
+  padding: 2px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+    
+}
+.msg-info{
+margin-bottom: 40px;
+}
+
+.loginInput{
+    margin-bottom: 10px;
+    width: 90%;
+    font-size: 18px;
+}
+
+.loginInput:focus{
+    outline: none;
+}
+
+.loginButton{
+    height: 40px;
+    border-radius: 10px;
+    width: 20%;
+    border: none;
+    background-color: #1775ee;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.loginButton:focus{
+  outline: none;
+}
+
+.loginButton:disabled{
+  cursor: not-allowed;
+}
+
+.loginForgot{
+    text-align: center;
+    color: #1775ee;
+}
+
+.loginRegisterButton{
+    width: 40%;
+    align-self: center;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e09e3a;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+} 
