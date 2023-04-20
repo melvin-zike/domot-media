@@ -3,6 +3,7 @@ import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import EditProfile from "./pages/editProfile/EditProfile";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,12 +26,9 @@ function App() {
         <Route path="/register">
           {user ? <Redirect to="/" /> : <Register />}
         </Route>
-        <Route path="/messenger">
-          {!user ? <Login /> : <Messenger />}
-        </Route>
+        <Route path="/messenger">{!user ? <Login /> : <Messenger />}</Route>
         <Route path="/profile/:username">
-        {!user ? <Login /> : <Profile />}
-          
+          {!user ? <Login /> : <Profile />}
         </Route>
         <Route path="/edit-profile">
           {!user ? <Login /> : <EditProfile />}

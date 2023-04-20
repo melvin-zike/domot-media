@@ -1,23 +1,103 @@
-.profile{
+.profile {
+  display: flex;
+  width: 75%;
+  margin: auto;
+}
+
+.profileRight {
+  flex: 7;
+}
+
+.profileRightTop {
+  background-color: #fff;
+  margin-left: 10px;
+}
+.profileCover {
+  height: 320px;
+  position: relative;
+}
+
+.editProfile {
+  margin-top: -5px;
+  margin-left: 2px;
+  /* margin-bottom: 10px; */
+  border: none;
+  background-color: #1872f2;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.editProfile2 {
+  display: none;
+}
+
+.profileCoverImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.profileUserImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 150px;
+  border: 3px solid white;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileInfoName {
+  font-size: 24px;
+  margin-top: -20px;
+}
+
+.profileInfoDesc {
+  font-weight: 300;
+}
+
+.profileRightBottom {
+  display: flex;
+}
+
+@media screen and (max-width: 480px) {
+  .profile {
     display: flex;
-    width: 75%;
+    flex-direction: column;
+    width: 100%;
     margin: auto;
-}
+  }
 
-.profileRight{
-    flex: 7;
-}
+  .profileRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-.profileRightTop{
-    background-color: #fff;
-    margin-left: 10px;
-}
-.profileCover{
-    height: 320px;
-    position: relative;
-}
-
-.editProfile{
+  .profileRightBottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .editProfile {
+    display: none;
+  }
+  .editProfile2 {
     margin-top: -5px;
     margin-left: 2px;
     /* margin-bottom: 10px; */
@@ -30,43 +110,11 @@
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-}
+    margin-bottom: 10px;
+  }
 
-.profileCoverImg{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.profileUserImg{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 150px;
-    border: 3px solid white;
-}
-
-.profileInfo{
+  .profileCover {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.profileInfoName{
-    font-size: 24px;
-    margin-top: -20px;
-}
-
-.profileInfoDesc{
-    font-weight: 300;
-}
-
-.profileRightBottom{
-    display: flex;
+  }
 }

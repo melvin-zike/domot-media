@@ -22,7 +22,6 @@ export default function Profile() {
     fetchUser();
   }, [username]);
 
-
   return (
     <>
       <Topbar />
@@ -51,18 +50,23 @@ export default function Profile() {
               />
               <span>
                 <Link to="/edit-profile">
-                <button className="editProfile">Edit Profile</button>
+                  <button className="editProfile">Edit Profile</button>
                 </Link>
-                </span>
+              </span>
             </div>
             <div className="profileInfo">
               <h4 className="profileInfoName">{user.username}</h4>
               <span className="profileInfoDesc">{user.desc}</span>
+              <span>
+                <Link to="/edit-profile">
+                  <button className="editProfile2">Edit Profile</button>
+                </Link>
+              </span>
             </div>
           </div>
           <div className="profileRightBottom">
             <Feed username={username} />
-            <Rightbar user={user}/>
+            <Rightbar user={user} />
           </div>
         </div>
       </div>

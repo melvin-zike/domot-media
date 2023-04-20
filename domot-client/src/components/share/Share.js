@@ -32,23 +32,24 @@ export default function Share() {
       try {
         await axios.post("/upload", data, {
           headers: {
-            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            token:
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
       } catch (err) {}
     }
     try {
-      if(newPost.desc === ""){
-        console.log("fill in the form")
-      }else{
+      if (newPost.desc === "") {
+        console.log("fill in the form");
+      } else {
         await axios.post("/posts", newPost, {
           headers: {
-            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            token:
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         window.location.reload();
       }
-      
     } catch (err) {}
   };
 
@@ -91,7 +92,7 @@ export default function Share() {
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </label>
-            <div className="shareOption">
+            <div className="shareOption taging">
               <Label htmlColor="blue" className="shareIcon" />
               <span className="shareOptionText">Tag</span>
             </div>

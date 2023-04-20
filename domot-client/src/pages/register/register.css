@@ -1,35 +1,33 @@
-.login {
+.register {
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  display: flex; 
+  display: flex;
   /* align-items: center;
   justify-content: center; */
 }
 
-.loginWrapper {
+.registerWrapper {
   width: 100%;
   height: 100%;
   display: flex;
 }
 
- .loginLeft {
+.registerLeft {
   flex: 9;
   width: 20%;
   background-image: url("../../assests/doors-1587329_1920.jpg");
   display: flex;
   flex-direction: column;
-  
 }
 
-.loginRight {
+.registerRight {
   flex: 3;
   display: flex;
   flex-direction: column;
-  
 }
- 
-.loginLogo {
+
+.registerLogo {
   font-size: 40px;
   font-weight: 700;
   margin-left: 10px;
@@ -38,13 +36,13 @@
   margin-bottom: 10px;
 }
 
-.loginDesc {
+.registerDesc {
   font-size: 16px;
   color: #fff;
   margin-left: 10px;
 }
 
-.loginBox{
+.registerBox {
   height: 100vh;
   margin-top: 150px;
   padding: 2px;
@@ -53,59 +51,72 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  
-    
 }
-.msg-info{
-margin-bottom: 40px;
-}
-
-.loginInput{
-    margin-bottom: 10px;
-    width: 90%;
-    
-    font-size: 18px;
+.msg-info {
+  margin-bottom: 40px;
+  font-weight: 600;
 }
 
-.loginInput:focus{
-    outline: none;
+.registerInput {
+  margin-bottom: 15px;
+  padding: 5px;
+  width: 80%;
+  background-color: #eee;
+  border: none;
+  font-size: 18px;
 }
 
-.loginButton{
-    height: 50px;
-    border-radius: 10px;
-    width: 20%;
-    border: none;
-    background-color: #1775ee;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.loginButton:focus{
+.registerInput:focus {
   outline: none;
 }
 
-.loginButton:disabled{
+.registerButton {
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 40%;
+  border: none;
+  background-color: #1775ee;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registerButton:focus {
+  outline: none;
+}
+
+.registerButton:disabled {
   cursor: not-allowed;
 }
 
-.loginForgot{
-    text-align: center;
-    color: #1775ee;
+.registerForgot {
+  text-align: center;
+  color: #1775ee;
 }
 
-.loginRegisterButton{
-    width: 100%;
-    align-self: center;
-    height: 50px;
-    margin-top: 5px;
-    border-radius: 10px;
-    border: none;
-    background-color: #e09e3a;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-} 
+.registerRegisterButton {
+  width: 100%;
+  align-self: center;
+  height: 50px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e09e3a;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .animay {
+    display: none;
+  }
+
+  .registerLeft {
+    display: none;
+  }
+}

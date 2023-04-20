@@ -1,44 +1,43 @@
 /* git */
 .rightbarFriend {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  align-items: center;
+}
 
-  }
-  
-  .rightbarProfileImgContainer {
-    margin-right: 5px;
-    position: relative;
-  }
-  
-  .rightbarProfileImg {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    bottom: 20px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+.rightbarProfileImgContainer {
+  margin-right: 5px;
+  position: relative;
+}
 
-  .rightbarFollowButton{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #1872f2;;
-    background-color: #fff;
-    color: #1872f2;
-    border-radius: 5px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .rightbarFollowButton:focus{
-    outline: none;
-  }
+.rightbarProfileImg {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightbarFollowButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #1872f2;
+  background-color: #fff;
+  color: #1872f2;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.rightbarFollowButton:focus {
+  outline: none;
+}
 /*   
   .rightbarOnline{
       width: 12px;
@@ -51,26 +50,26 @@
       border: 2px solid white;
   }
    */
-  .rightbarUsername{
-    margin-right: 20px;
-      font-weight: 500;
-      
-  }
+.rightbarUsername {
+  margin-right: 20px;
+  font-weight: 500;
+}
 
-  .verify {
-    border: none;
-    padding: 2px;
-    margin-left: 4px;
-    margin-bottom: 3px;
-    font-size: 12px;
-    background-color: #1872f2;
-    color: white;
-    margin-top: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+.verify {
+  border: none;
+  padding: 1px 2px;
 
-  .rightbarUserInfomation{
-    margin-top: 0;
-    margin-left: 47px;
-  }
+  margin-left: 4px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  background-color: #1872f2;
+  color: white;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.rightbarUserInfomation {
+  margin-top: 0;
+  margin-left: 47px;
+}

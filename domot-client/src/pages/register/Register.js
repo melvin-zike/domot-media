@@ -2,9 +2,8 @@ import axios from "axios";
 import { useRef } from "react";
 import "./register.css";
 import { useHistory } from "react-router";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import AnimatedShapes from "../AnimatedShapes";
-
 
 export default function Register() {
   const username = useRef();
@@ -33,30 +32,29 @@ export default function Register() {
   };
 
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        
-        <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
-          <h3 class="msg-info">Sign Up To Domot</h3>
+    <div className="register">
+      <div className="registerWrapper">
+        <div className="registerRight">
+          <form className="registerBox" onSubmit={handleClick}>
+            <h3 class="msg-info">Sign Up To Cappa</h3>
             <input
               placeholder="Username"
               required
               ref={username}
-              className="loginInput"
+              className="registerInput"
             />
             <input
               placeholder="Email"
               required
               ref={email}
-              className="loginInput"
+              className="registerInput"
               type="email"
             />
             <input
               placeholder="Password"
               required
               ref={password}
-              className="loginInput"
+              className="registerInput"
               type="password"
               minLength="6"
             />
@@ -64,28 +62,28 @@ export default function Register() {
               placeholder="Password Again"
               required
               ref={passwordAgain}
-              className="loginInput"
+              className="registerInput"
               type="password"
             />
-            <button className="loginButton" type="submit">
+            <button className="registerButton" type="submit">
               Sign Up
             </button>
-            <span className="loginForgot">Don't have an account? Sign Up</span>
             <Link to="/login">
-          <button className="loginRegisterButton">Log into Account</button>
-          </Link>
+              <span className="registerForgot">
+                Already have an account? Sign In
+              </span>
+            </Link>
           </form>
-          
         </div>
 
-        <div className="loginLeft">
-          <h3 className="loginLogo">Domot</h3>
-          <span className="loginDesc">
+        <div className="registerLeft">
+          <h3 className="registerLogo">Domot</h3>
+          <span className="registerDesc">
             <p>We dey your domot!</p>
             <p>Connect with friends and the world around you on Domot.</p>
             <p>Nigeria's number 1 social media platform.</p>
           </span>
-          <AnimatedShapes />
+          <AnimatedShapes className="animay" />
         </div>
       </div>
     </div>

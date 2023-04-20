@@ -3,7 +3,7 @@ import "./login.css";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import AnimatedShapes from "../AnimatedShapes";
 
 export default function Login() {
@@ -23,10 +23,8 @@ export default function Login() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginRight">
-
-           <form className="loginBox" onSubmit={handleClick}>
-           
-            <h3 class="msg-info">Sign In To your account</h3>
+          <form className="loginBox" onSubmit={handleClick}>
+            <h3 class="msg-info">Sign In To Cappa </h3>
             <input
               placeholder="Email"
               type="email"
@@ -49,24 +47,22 @@ export default function Login() {
                 "Log In"
               )}
             </button>
-            <span className="loginForgot">Forgot Password?</span>
             <Link to="/register">
-            <button className="loginRegisterButton">
-                "Create a New Account"
-            </button>
+              <span className="loginForgot">
+                Don't have an account? Sign Up
+              </span>
             </Link>
-            
           </form>
         </div>
 
         <div className="loginLeft">
           <h3 className="loginLogo">Domot</h3>
           <span className="loginDesc">
-          <p>We dey your domot!</p>
+            <p>We dey your domot!</p>
             <p>Connect with friends and the world around you on Domot.</p>
             <p>Nigeria's number 1 social media platform.</p>
           </span>
-          <AnimatedShapes />
+          <AnimatedShapes className="animay" />
         </div>
       </div>
     </div>

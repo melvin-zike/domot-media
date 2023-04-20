@@ -6,25 +6,30 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Add, Remove } from "@material-ui/icons";
 
 export default function Rightbar({ user }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [friends, setFriends] = useState([]);
+  const [randomusers, setRandomUsers] = useState([]);
   const { user: currentUser, dispatch } = useContext(AuthContext);
-  
+
   const [followed, setFollowed] = useState(
-    !currentUser.followings.includes(currentUser.userId)
+    currentUser?.followings.includes(currentUser?.userId)
   );
 
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendList = await axios.get("/users/friends/" + currentUser?._id, {
-          headers: {
-            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-          },
-        });
+        const friendList = await axios.get(
+          "/users/friends/" + currentUser?._id,
+          {
+            headers: {
+              token:
+                "Bearer " +
+                JSON.parse(localStorage.getItem("user")).accessToken,
+            },
+          }
+        );
         setFriends(friendList.data);
       } catch (err) {
         console.log(err);
@@ -33,34 +38,26 @@ export default function Rightbar({ user }) {
     getFriends();
   }, [user]);
 
-  const handleClick = async () => {
-    try {
-      if (followed) {
-        await axios.put(`/users/${user?._id}/unfollow`, {
-          userId: currentUser?._id,
+  //Get Random Users
+  useEffect(() => {
+    const getRandomUsers = async () => {
+      try {
+        const userList = await axios.get("/users/all", {
           headers: {
-              token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            token:
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
-          
         });
-        dispatch({ type: "UNFOLLOW", payload: user._id });
-      } else {
-        await axios.put(`/users/${user?._id}/follow`, {
-          userId: currentUser?._id,
-          
-          headers: {
-              token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-          },
-          
-        });
-        dispatch({ type: "FOLLOW", payload: user._id });
+        setRandomUsers(userList.data);
+        console.log(randomusers);
+      } catch (err) {
+        console.log(err);
       }
-      setFollowed(followed => !followed);
+    };
+    getRandomUsers();
+  }, [user]);
 
-    } catch (err) {
-    }
-  };
-  console.log(friends)
+  console.log(friends);
   const HomeRightbar = () => {
     return (
       <>
@@ -73,8 +70,8 @@ export default function Rightbar({ user }) {
         <img className="rightbarAd" src="assets/posts/post-3.jpg" alt="" />
         <h4 className="rightbarTitle">Recommended For You</h4>
         <ul className="rightbarFriendList">
-          {Users.map((u) => (
-            <Online key={u.id} user={u} />
+          {randomusers.map((u) => (
+            <Online key={u._id} user={u} />
           ))}
         </ul>
       </>
@@ -84,13 +81,11 @@ export default function Rightbar({ user }) {
   const ProfileRightbar = () => {
     return (
       <>
-        {user.username !== currentUser.username && (
-          <button className="rightbarFollowButton" onClick={handleClick}>
-            {followed ? "Unfollow" : "Follow"}
-            {followed ? <Remove /> : <Add />}
-          </button>
+        {user.username !== currentUser.username ? (
+          ""
+        ) : (
+          <Cb creditOwner={currentUser} />
         )}
-        { user.username !== currentUser.username ? "" : <Cb creditOwner={currentUser} />}
         <h4 className="rightbarTitle">User information</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
@@ -104,8 +99,12 @@ export default function Rightbar({ user }) {
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Balance:</span>
             <span className="rightbarInfoValuecash">NGN8500</span>
-            <span className="rightbarInfoValue"><button className="delete">Reharge</button></span>
-            <span className="rightbarInfoValue"><button className="withdraw">Withdraw</button></span>
+            <span className="rightbarInfoValue">
+              <button className="delete">Reharge</button>
+            </span>
+            <span className="rightbarInfoValue">
+              <button className="withdraw">Withdraw</button>
+            </span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Relationship:</span>
